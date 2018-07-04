@@ -95,4 +95,23 @@ JMeter
 ![优化后](https://github.com/zaiyunduan123/jesper_seckill/blob/master/src/main/resources/static/img/stress-test/optimised_goodslist.png)
 
 
+## 本地运行
+数据库准备
+选中数据库，进入命令行界面
+navacate选中数据库
+“运行sql文件”
+不能直接在数据库连接上“运行sql文件”，报错，找不到数据库。
+create database seckill;
 
+application.properties
+修改
+mysql端口为自己的端口
+
+redis，增加passwork
+
+
+RedisPoolFactory.java
+JedisPool jp = new JedisPool(config, redisConfig.getHost(), redisConfig.getPort(),
+                redisConfig.getTimeout()*1000, redisConfig.getPassword(), 0);
+                
+安装rabitmq
